@@ -1,16 +1,32 @@
 let titulo = document.querySelector(".titulo");
 titulo.textContent = "Aparecida Nutricionista";
 
-var paciente = document.querySelector("#primeiro-paciente")
-var tdPeso = paciente.querySelector(".info-peso")
+let paciente = document.querySelector("#primeiro-paciente");
 
-var peso = tdPeso.textContent;
+let tdPeso = paciente.querySelector(".info-peso");
+let peso = tdPeso.textContent;
 
-var tdAltura = paciente.querySelector(".info-altura")
-var altura = tdAltura.textContent
+let tdAltura = paciente.querySelector(".info-altura");
+let altura = tdAltura.textContent;
 
-var tdImc = paciente.querySelector(".info-imc")
+let tdImc = paciente.querySelector(".info-imc");
 
-var imc = peso / (altura * altura);
+let pesoValido = true;
+let alturaValida = true;
 
-tdImc.textContent = imc 
+if (peso < 0 || peso > 1000){
+    console.log("Peso inválido")
+    pesoValido = false;
+    tdImc.textContent = "Peso inválido!"
+}
+
+if (altura < 0 || peso > 3){
+    console.log("Altura inválida")
+    alturaValida = false;
+    tdImc.textContent = "Altura inválida!"
+}
+
+if (alturaValida && pesoValido){
+    let imc = peso / (altura * altura);
+    tdImc.textContent = imc;
+}

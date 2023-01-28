@@ -12,22 +12,23 @@ botaoAdicionar.addEventListener("click", (event) => {
 
     let pacienteTr = document.createElement("tr");
 
-    let nomeTd = document.createElement("td")
-    let pesoTd = document.createElement("td")
-    let alturaTd = document.createElement("td")
-    let gorduraTd = document.createElement("td")
-    let imcTd = document.createElement("td")
+    let nomeTd = document.createElement("td");
+    let pesoTd = document.createElement("td");
+    let alturaTd = document.createElement("td");
+    let gorduraTd = document.createElement("td");
+    let imcTd = document.createElement("td");
 
     nomeTd.textContent = nome
     pesoTd.textContent = peso
     alturaTd.textContent = altura
     gorduraTd.textContent = gordura
-    imcTd.textContent = imc
+    imcTd.textContent = calculaImc(peso,altura)
 
     pacienteTr.appendChild(nomeTd)
     pacienteTr.appendChild(pesoTd)
     pacienteTr.appendChild(alturaTd)
     pacienteTr.appendChild(gorduraTd)
+    pacienteTr.appendChild(imcTd)
 
     let tabela = document.querySelector("#tabela-pacientes");
 

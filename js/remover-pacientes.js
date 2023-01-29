@@ -1,7 +1,15 @@
 let pacientes = document.querySelectorAll(".paciente")
 
-pacientes.forEach((paciente) =>{
-    paciente.addEventListener("dbclick", () => {
+let tabela = document.querySelector("table")
+
+tabela.addEventListener("dblclick", (event) => {
+    let alvoEvento = event.target
+    let paiDoAlvo = alvoEvento.parentNode
+    paiDoAlvo.remove()
+})
+
+/*pacientes.forEach((paciente) =>{
+    paciente.addEventListener("dblclick", () => {
         this.remove()
     })
-})
+})*/

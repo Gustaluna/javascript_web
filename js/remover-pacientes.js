@@ -3,9 +3,7 @@ let pacientes = document.querySelectorAll(".paciente")
 let tabela = document.querySelector("table")
 
 tabela.addEventListener("dblclick", (event) => {
-    let alvoEvento = event.target
-    let paiDoAlvo = alvoEvento.parentNode
-    paiDoAlvo.remove()
+   event.target.parentNode.remove()
 })
 
 /*pacientes.forEach((paciente) =>{

@@ -1,13 +1,12 @@
-let pacientes = document.querySelectorAll(".paciente")
+var pacientes = document.querySelectorAll(".paciente");
 
-let tabela = document.querySelector("table")
+var tabela = document.querySelector("#tabela-pacientes");
 
-tabela.addEventListener("dblclick", (event) => {
-   event.target.parentNode.remove()
-})
+tabela.addEventListener("dblclick", function(event) {
+    event.target.parentNode.classList.add("fadeOut");
 
-/*pacientes.forEach((paciente) =>{
-    paciente.addEventListener("dblclick", () => {
-        this.remove()
-    })
-})*/
+    setTimeout(function() {
+        event.target.parentNode.remove();
+    }, 500);
+
+});
